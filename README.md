@@ -12,3 +12,5 @@ There are four actors :
 
 Then I have a class for a client and a systemactor to manage the operations.
 Note that I have stopped at day 3. If you want to test the code without the client you can uncomment the command line that send a request to consoleReader in the app.
+
+The file answer.txt contains the answers of questions for each day.
