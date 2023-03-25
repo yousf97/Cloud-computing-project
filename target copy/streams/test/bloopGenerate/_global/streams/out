@@ -1,0 +1,4 @@
+[debug] [akka-quickstart-scala-test] Classpath dependencies List()
+[debug] [akka-quickstart-scala-test] Dependencies from configurations List(akka-quickstart-scala)
+[debug] Bloop wrote the configuration of project 'akka-quickstart-scala-test' to 'C:\Users\youssef\Desktop\DNA cours\Cloud Programming\akka-quickstart-scala\akka-quickstart-scala\.bloop\akka-quickstart-scala-test.json'
+[success] Generated .bloop\akka-quickstart-scala-test.json
