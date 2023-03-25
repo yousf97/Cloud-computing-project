@@ -1,0 +1,21 @@
+Day1 :
+•	Question:
+o	What happens when the user accidentally types an incorrect command?
+	The system will print “the command is not valid”
+o	What happens if the user accidentally types Ctrl-c?
+	The system will print “the command is not valid”
+Day2
+o	What happens if our server crashes now?
+o	We will lose the data stored
+o	Try crashing the server, and restarting it. Do we still have the objects?
+o	The objects disappear
+Day3 :
+Suppose we have a lot of keys with large values, what bottlenecks can you imagine?
+there are several bottlenecks that we can encounter, such as:
+•	Memory usage: Large values can quickly fill up the available memory, causing the application to slow down or crash. If we have limited memory resources, we may need to implement a strategy to evict older or less frequently accessed values to make room for new ones.
+Suppose we can have super-fast key-value stores, which can store at most 1000 keys How can we use these actors to improve overall performance of our system? 
+Implement a caching actor If we had N caching actors, what performance improvements can we implement?
+
+To improve the overall performance of the system, we can implement a caching actor that can store frequently accessed keys in memory for faster access. One way to implement this caching actor is to create a wrapper actor around the existing CashActor that can store frequently accessed keys in memory.
+The caching actor can have a HashMap that can store the keys that have been accessed recently. Whenever the Lookup message is received, the caching actor first checks if the key is present in the HashMap. If it is present, the value is immediately returned. If it is not present, the caching actor forwards the message to the CashActor and stores the key-value pair in the HashMap. The caching actor also has a maximum capacity of 1000, and when it reaches this limit, the least recently accessed key-value pair is evicted from the cache.
+If we had N caching actors, we can improve performance by load balancing the requests across the caching actors. This can be done by hashing the keys and sending the messages to the corresponding caching actor based on the hash value. This will ensure that the requests are evenly distributed across the caching actors, and each caching actor can handle a smaller number of requests, improving the overall performance of the system.
